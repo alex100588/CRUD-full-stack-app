@@ -1,5 +1,5 @@
 import express from "express";
-import { create, getAllUsers, getUserById } from "../controller/userController.js"
+import { create, getAllUsers, getUserById, update } from "../controller/userController.js"
 
 const route = express.Router()
 
@@ -9,5 +9,7 @@ route.post("/user", create)
 route.get('/users', getAllUsers)
 // extrage utilizator dupa id
 route.get('/user/:id', getUserById)
+// update
+route.put('/update/user/:id', update)
 
 export default route
