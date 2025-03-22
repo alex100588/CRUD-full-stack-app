@@ -1,0 +1,26 @@
+.user-table{
+    width: 60%;
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: .1rem .1rem .9rem rgba(0, 0, 0, .55);
+}
+
+.user-table table{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.user-table table thead th{
+    background-color: rgb(65, 156, 156);
+    color: #fff;
+}
+
+.user-table table tbody td{
+    background-color: rgb(190, 178, 178);
+    color: #fff;
+    padding: .4rem;
+    text-align: center;
+    vertical-align: middle;
+}
