@@ -30,7 +30,6 @@ const User = () => {
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Adress</th>
-            <th scope="col">Phone number</th>
             {/* <th scope="col">Join date</th> */}
             <th scope="col">Actions</th>
           </tr>
@@ -38,12 +37,11 @@ const User = () => {
         <tbody>
           {users.map((user, index) => {
             return (
-              <tr key={index}>
+              <tr className="table-row" key={index}>
                 <td>{index + 1}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.address}</td>
-                <td>{user.phone ? user.phone : "No number"}</td>
                 {/* <td>{user.updatedAt}</td> */}
                 <td className="">
                   <button type="button" className="btn btn-info me-2">
