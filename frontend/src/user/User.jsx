@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./User.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -8,7 +9,7 @@ const User = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:8000/api/users");
-        console.log(response.data[0].address)
+        // console.log(response.data)
         setUsers(response.data)
       } catch (error) {
         console.log("Error while fetching the data", error);
@@ -19,9 +20,9 @@ const User = () => {
 
   return (
     <div className="user-table">
-      <button type="button" className="btn btn-primary">
-        Add User <i className="fa-solid fa-user-plus"></i>
-      </button>
+      <Link to='/add' type="button" className="btn btn-primary">
+        Add Employee <i className="fa-solid fa-user-plus"></i>
+      </Link>
       <table className="table table-bordered">
         <thead>
           <tr>
@@ -29,6 +30,8 @@ const User = () => {
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Adress</th>
+            <th scope="col">Phone number</th>
+            {/* <th scope="col">Join date</th> */}
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -40,6 +43,8 @@ const User = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.address}</td>
+                <td>{user.phone ? user.phone : "No number"}</td>
+                {/* <td>{user.updatedAt}</td> */}
                 <td className="">
                   <button type="button" className="btn btn-info me-2">
                     <i className="fa-solid fa-pen-to-square"></i>
