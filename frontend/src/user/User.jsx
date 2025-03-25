@@ -9,7 +9,7 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://crud-full-stack-app.vercel.app/users");
+        const response = await axios.get("https://crud-full-stack-app.vercel.app/api/users");
         // console.log(response.data)
         setUsers(response.data)
       } catch (error) {
@@ -21,7 +21,7 @@ const User = () => {
 
   const deleteUser = async (userId) => {
     await axios
-      .delete(`https://crud-full-stack-app.vercel.app/delete/user/${userId}`)
+      .delete(`https://crud-full-stack-app.vercel.app/api/delete/user/${userId}`)
       .then((response) => {
         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
         toast.success(response.data.message, { position: "top-center" });
