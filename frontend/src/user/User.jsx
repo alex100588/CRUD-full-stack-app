@@ -42,11 +42,10 @@ const User = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.address}</td>
-                {/* <td>{user.updatedAt}</td> */}
                 <td className="">
-                  <button type="button" className="btn btn-info me-2">
+                  <Link to= {`/update/${user._id}`} type="button" className="btn btn-info me-2 ">
                     <i className="fa-solid fa-pen-to-square"></i>
-                  </button>
+                  </Link>
 
                   <button type="button" className="btn btn-danger">
                     <i className="fa-solid fa-trash"></i>
