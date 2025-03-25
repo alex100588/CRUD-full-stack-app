@@ -36,7 +36,7 @@ const Update = () => {
     await axios
       .put(`http://localhost:8000/api/update/user/${id}`, user)
       .then((response) => {
-        toast.success(response.data.message, { position: "top-right" });
+        toast.success(response.data.message, { positition: "top-center" });
         navigate("/");
       })
       .catch((error) => {
