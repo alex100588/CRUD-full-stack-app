@@ -22,7 +22,7 @@ const Update = () => {
 
   useEffect(() => {
     axios
-      .get(`https://crud-full-stack-app.vercel.app/user/${id}`)
+      .get(`https://crud-full-stack-app.vercel.app/api/user/${id}`)
       .then((response) => {
         setUser(response.data);
       })
@@ -34,7 +34,7 @@ const Update = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      .put(`https://crud-full-stack-app.vercel.app/user/${id}`, user)
+      .put(`https://crud-full-stack-app.vercel.app/api/user/${id}`, user)
       .then((response) => {
         toast.success(response.data.message, { positition: "top-center" });
         navigate("/");
