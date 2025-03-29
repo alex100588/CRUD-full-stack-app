@@ -22,8 +22,8 @@ const AddUser = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      // .post("http://localhost:8000/api/user", user)
-      .post("https://crud-full-stack-app.vercel.app/api/user", user)
+      .post("http://localhost:8000/api/user", user)
+      // .post("https://crud-full-stack-app.vercel.app/api/user", user)
       .then((response) => {
         toast.success(response.data.message, { position: "top-center"})
         navigate("/");
