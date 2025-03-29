@@ -36,7 +36,7 @@ const Update = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      .put(`${process.env.REACT_APP_API_URL}/user/${id}`, user)
+      .put(`${process.env.REACT_APP_API_URL}/update/user/${id}`, user)
       // .put(`https://crud-full-stack-app.vercel.app/api/update/user/${id}`, user)
       .then((response) => {
         toast.success(response.data.message, { positition: "top-center" });

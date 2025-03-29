@@ -9,7 +9,7 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/user`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/users`);
         // const response = await axios.get("https://crud-full-stack-app.vercel.app/api/users");
         // console.log(response.data)
         setUsers(response.data)
@@ -22,7 +22,7 @@ const User = () => {
 
   const deleteUser = async (userId) => {
     await axios
-      .delete(`${process.env.REACT_APP_API_URL}/user/${userId}`)
+      .delete(`${process.env.REACT_APP_API_URL}/delete/user/${userId}`)
       // .delete(`https://crud-full-stack-app.vercel.app/api/delete/user/${userId}`)
       .then((response) => {
         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
