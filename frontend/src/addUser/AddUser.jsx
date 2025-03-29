@@ -18,12 +18,14 @@ const AddUser = () => {
 
     setUser({ ...user, [name]: value });
   };
+  console.log(process.env.REACT_APP_API_URL);
+  
 
   const submitForm = async (e) => {
     e.preventDefault();
     await axios
-      // .post("http://localhost:8000/api/user", user)
-      .post("https://crud-full-stack-app.vercel.app/api/user", user)
+      .post(`${process.env.REACT_APP_API_URL}/user`, user)
+      // .post("https://crud-full-stack-app.vercel.app/api/user", user)
       .then((response) => {
         toast.success(response.data.message, { position: "top-center"})
         navigate("/");
